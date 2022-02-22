@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
     <IsPackable>true</IsPackable>
     <PackageId>Netizen.ID</PackageId>
     <Version>0.0.2</Version>
     <Authors>chenshenchao</Authors>
     <PackageLicenseFile>License</PackageLicenseFile>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
@@ -25,7 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="License" Pack="true" PackagePath="" />
+    <None Include="../License" Pack="true" PackagePath="/" />
+    <None Include="../Readme.md" Pack="true" PackagePath="/" />
   </ItemGroup>
 
 </Project>
