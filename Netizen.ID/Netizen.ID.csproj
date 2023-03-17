@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <IsPackable>true</IsPackable>
     <PackageId>Netizen.ID</PackageId>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <Authors>chenshenchao</Authors>
     <PackageLicenseFile>License</PackageLicenseFile>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
