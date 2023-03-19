@@ -9,10 +9,10 @@ class Program
     {
         var makeInt64SingleElapsed = MakeInt64BySingle();
         var makeInt64ManyElapsed = MakeInt64ByMany();
-        var makeChar24SingleElapsed = MakeChar24BySingle();
-        var makeChar24ManyElapsed = MakeChar24ByMany();
+        var makeChar20PlusSingleElapsed = MakeChar20PlusBySingle();
+        var makeChar20PlusManyElapsed = MakeChar20PlusByMany();
         Console.WriteLine($"int64 => single: {makeInt64SingleElapsed} many: {makeInt64ManyElapsed}");
-        Console.WriteLine($"char24 => single: {makeChar24SingleElapsed} many: {makeChar24ManyElapsed}");
+        Console.WriteLine($"char20Plus => single: {makeChar20PlusSingleElapsed} many: {makeChar20PlusManyElapsed}");
         Console.ReadLine();
     }
 
@@ -48,10 +48,10 @@ class Program
         return sw.Elapsed;
     }
 
-    private static TimeSpan MakeChar24BySingle(int count=1024)
+    private static TimeSpan MakeChar20PlusBySingle(int count=1024)
     {
         Stopwatch sw = Stopwatch.StartNew();
-        Char24IDMaker idmkr = new Char24IDMaker("netz");
+        Char20PlusIDMaker idmkr = new Char20PlusIDMaker("netz");
         sw.Restart();
         string[] ids = new string[count];
         for(int i = 0; i < count; i++)
@@ -66,10 +66,10 @@ class Program
         return sw.Elapsed;
     }
 
-    private static TimeSpan MakeChar24ByMany(int count=1024)
+    private static TimeSpan MakeChar20PlusByMany(int count=1024)
     {
         Stopwatch sw = Stopwatch.StartNew();
-        Char24IDMaker idmkr = new Char24IDMaker("netz");
+        Char20PlusIDMaker idmkr = new Char20PlusIDMaker("netz");
         sw.Restart();
         string[] ids = idmkr.MakeMany(count);
         sw.Stop();

@@ -1,26 +1,26 @@
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Netizen.ID.Test;
 
 [TestClass]
-public class Int64IDMakerTest
+public class Char20PlusIDMakerTest
 {
-    private Int64IDMaker int64IDMaker;
+    private Char20PlusIDMaker char20PlusIDMaker;
 
-    public Int64IDMakerTest()
+    public Char20PlusIDMakerTest()
     {
-        int64IDMaker = new Int64IDMaker();
+        char20PlusIDMaker = new Char20PlusIDMaker("netz");
     }
 
     [TestMethod]
     public void TestMake()
     {
         const int size = 1024;
-        long[] results = new long[size];
-        for (int i = 0; i < size; ++i)
+        string[] results = new string[size];
+        for (int i = 0; i < size; i++)
         {
-            results[i] = int64IDMaker.Make();
+            results[i] = char20PlusIDMaker.Make();
         }
         var r = results.Distinct();
         Assert.AreEqual(size, r.Count());
@@ -30,7 +30,7 @@ public class Int64IDMakerTest
     public void TestMakeMany()
     {
         const int size = 1024;
-        long[] results = int64IDMaker.MakeMany(size);
+        string[] results = char20PlusIDMaker.MakeMany(size);
         var r = results.Distinct();
         Assert.AreEqual(size, r.Count());
     }

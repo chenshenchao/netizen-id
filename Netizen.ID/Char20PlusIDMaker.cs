@@ -3,7 +3,7 @@ using System;
 
 namespace Netizen.ID;
 
-public class Char24IDMaker
+public class Char20PlusIDMaker
 {
     public const long IdMax = 999;
 
@@ -11,7 +11,7 @@ public class Char24IDMaker
     public long LastId { get; private set; }
     public DateTime LastAt { get; private set; }
 
-    public Char24IDMaker(string makerId)
+    public Char20PlusIDMaker(string makerId)
     {
         MakerId = makerId;
         LastId = 1;

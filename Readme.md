@@ -3,7 +3,7 @@
 一个生成ID的库。
 
 - Int64IDMaker 64位
-- Char24IDMaker 24字符
+- Char20PlusIDMaker 24字符
 
 ## 示例
 
@@ -19,6 +19,6 @@ NuGet\Install-Package Netizen.ID
 Int64IDMaker i64mkr = new Int64IDMaker();
 long iid = i64mkr.Make();
 
-Char24IDMaker c24mkr = new Char24IDMaker();
-string sid = c24mkr.Make();
+Char20PlusIDMaker c20pmkr = new Char20PlusIDMaker();
+string sid = c20pmkr.Make();
 ```
