@@ -24,4 +24,7 @@ string sid = c20pmkr.Make();
 
 Byte10IDMaker b10mkr = new Byte10IDMaker(1);
 byte[] = b10mkr.Make();
+
+Charset32IDMaker c32mkr = new Charset32IDMaker(1);
+string c32id = c32mkr.Make();
 ```

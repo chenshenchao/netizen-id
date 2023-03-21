@@ -4,7 +4,7 @@
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <IsPackable>true</IsPackable>
     <PackageId>Netizen.ID</PackageId>
-    <Version>0.0.5</Version>
+    <Version>0.0.6</Version>
     <Authors>chenshenchao</Authors>
     <PackageLicenseFile>License</PackageLicenseFile>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
