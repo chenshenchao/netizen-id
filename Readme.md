@@ -16,9 +16,12 @@ NuGet\Install-Package Netizen.ID
 ```
 
 ```csharp
-Int64IDMaker i64mkr = new Int64IDMaker();
+Int64IDMaker i64mkr = new Int64IDMaker(1);
 long iid = i64mkr.Make();
 
-Char20PlusIDMaker c20pmkr = new Char20PlusIDMaker();
+Char20PlusIDMaker c20pmkr = new Char20PlusIDMaker("netz");
 string sid = c20pmkr.Make();
+
+Byte10IDMaker b10mkr = new Byte10IDMaker(1);
+byte[] = b10mkr.Make();
 ```
