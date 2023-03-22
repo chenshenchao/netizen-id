@@ -4,7 +4,9 @@ namespace Netizen.ID;
 
 public class Byte10IDMaker
 {
-    //public const int TimestampLength = 47;
+    //public const int TimestampLength = 42;
+    public const int TimestampShift = RollLength + IdLength;
+    public const int RollLength = 5;
     public const int IdLength = 16;
     public const long IdMax = (1 << IdLength) - 1;
 
@@ -27,16 +29,12 @@ public class Byte10IDMaker
         result[0] = (byte)((MakerId >> 8) & 0xff);
         result[1] = (byte)(MakerId & 0xff);
 
-        // TimeStamp
-        for (int i = 0; i < 6; ++i)
+        // TimeStamp + Id + Roll
+        long roll = Random.Shared.Next(1, 0b11111);
+        long low = (LastAt << TimestampShift) | (LastId << RollLength) | roll;
+        for (int i = 0; i < 8; ++i)
         {
-            result[7 - i] = (byte)((LastAt >> (i * 8)) & 0xff);
-        }
-
-        // Id
-        for (int i = 0; i < 2; ++i)
-        {
-            result[9 - i] = (byte)((LastId >> (i * 8)) & 0xff);
+            result[9 - i] = (byte)((low >> (i * 8)) & 0xff);
         }
 
         return result;
